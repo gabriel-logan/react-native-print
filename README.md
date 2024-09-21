@@ -6,12 +6,6 @@ Print documents using React Native.
 
 Run `npm install react-native-print --save`
 
-## Add it to your project
-
-### Automatic
-
-Run `react-native link`
-
 ### Manual
 
 #### iOS
@@ -21,7 +15,7 @@ Run `react-native link`
 4. Add `libRNPrint.a` to `Link Binary With Libraries`
    [(Screenshot)](http://url.brentvatne.ca/17Xfe).
 
-#### Android
+#### Android - Kotlin
 - Edit `android/settings.gradle` to included
 
 ```java
@@ -34,20 +28,21 @@ project(':react-native-print').projectDir = new File(rootProject.projectDir,'../
 ```java
 dependencies {
   ....
-  compile project(':react-native-print')
+  implementation project(':react-native-print') // Add this line
 
 }
 ```
 
-- Edit `MainApplication.java` to include
+- Edit `MainApplication.kt` to include
 
 ```java
 // import the package
-import com.christopherdro.RNPrint.RNPrintPackage;
+import com.christopherdro.RNPrint.RNPrintPackage
 
-// include package
-new MainReactPackage(),
-new RNPrintPackage(),
+// It is no longer necessary to manually include the packages below, as React Native now includes them automatically.
+// add(MainReactPackage()),
+// add(RNPrintPackage())
+// If you include it, you will see an error occur because the package will be initialized twice.
 ```
 
 #### Windows
