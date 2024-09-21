@@ -4,7 +4,13 @@ Print documents using React Native.
 
 ## Installation
 
-Run `npm install react-native-print --save`
+```bash
+npm install react-native-print
+```
+
+```bash
+yarn add react-native-print
+```
 
 ### Manual
 
